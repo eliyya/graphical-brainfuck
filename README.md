@@ -1,2 +1,2 @@
-# bgc
-A simple brainfuck graphical compiler
+# BFGI
+A simple brainfuck graphical interpreter
