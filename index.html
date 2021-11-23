@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d-n {
+            display: none;
+        }
+        .fc {
+            background-color: rgba(256, 0, 0, .50);
+        }
+        .fcs {
+            background-color: rgba(0, 0, 256, .50);
+        }
+        /*.mp > td {*/
+        /*    border: solid 1px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<form name="bfinput" id="bff" method="POST" onsubmit="return compiles(this['in'].value);">
+    <textarea name="in" id="bfin" cols="30" rows="10" required>++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++.>+.+++++++..+++.<<++.>+++++++++++++++.>.+++.------.--------.<<+.<.</textarea>
+    <input type="submit">
+</form>
+<div id="cin">
+    <p>input:</p>
+    <div id="cint">
+
+    </div>
+</div>
+<div id="memory">
+    <p>memory:</p>
+    <table >
+        <tbody>
+            <tr id="mp">
+                <td>[0]</td>
+            </tr>
+            <tr id="p">
+                <td>^</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>output: </p>
+<textarea name="out" id="bfout" cols="30" rows="10" readonly></textarea>
+</body>
+<script src="/main.js"></script>
+<script>
+    function compiles(v) {
+        document.getElementById('bff').classList.add('d-n')
+        document.getElementById('cin').classList.remove('d-n')
+        i = 0                   // indice
+        p = 0                   // puntero
+        m = [{id:nid(), v:0}]   // memoria
+        o = ''
+        document.getElementById('mp').innerHTML = '<td>[0]</td>'
+        document.getElementById('p').innerHTML = '<td>^</td>'
+        compile(v);
+        return false
+    }
+</script>
+</html>
