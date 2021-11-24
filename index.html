@@ -19,10 +19,10 @@
     </style>
 </head>
 <body>
-<form name="bfinput" id="bff" method="POST" onsubmit="return compiles(this['in'].value);">
+<div id="bff">
     <textarea name="in" id="bfin" cols="30" rows="10" required>++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++.>+.+++++++..+++.<<++.>+++++++++++++++.>.+++.------.--------.<<+.<.</textarea>
-    <input type="submit">
-</form>
+    <button onclick="return compiles(document.getElementById('bfin').value)">Iniciar</button>
+</div>
 <div id="cin">
     <p>input:</p>
     <div id="cint">
