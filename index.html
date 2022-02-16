@@ -1,64 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .d-n {
-            display: none;
-        }
-        .fc {
-            background-color: rgba(256, 0, 0, .50);
-        }
-        .fcs {
-            background-color: rgba(0, 0, 256, .50);
-        }
-        /*.mp > td {*/
-        /*    border: solid 1px;*/
-        /*}*/
-    </style>
-</head>
-<body>
-<div id="bff">
-    <textarea name="in" id="bfin" cols="30" rows="10" required>++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++.>+.+++++++..+++.<<++.>+++++++++++++++.>.+++.------.--------.<<+.<.</textarea>
-    <button onclick="return compiles(document.getElementById('bfin').value)">Iniciar</button>
-</div>
-<div id="cin">
-    <p>input:</p>
-    <div id="cint">
-
-    </div>
-</div>
-<div id="memory">
-    <p>memory:</p>
-    <table >
-        <tbody>
-            <tr id="mp">
-                <td>[0]</td>
-            </tr>
-            <tr id="p">
-                <td>^</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>output: </p>
-<textarea name="out" id="bfout" cols="30" rows="10" readonly></textarea>
-</body>
-<script src="/main.js"></script>
-<script src="/bfgi/main.js"></script>
-<script>
-    function compiles(v) {
-        document.getElementById('bff').classList.add('d-n')
-        document.getElementById('cin').classList.remove('d-n')
-        i = 0                   // indice
-        p = 0                   // puntero
-        m = [{id:nid(), v:0}]   // memoria
-        o = ''
-        document.getElementById('mp').innerHTML = '<td>[0]</td>'
-        document.getElementById('p').innerHTML = '<td>^</td>'
-        compile(v);
-        return false
-    }
-</script>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🤯 - Graphical BrainFuck</title>
+        <link rel="stylesheet" href="./public/styles.css">
+    </head>
+    <body class="bg-blue-100 min-h-screen flex items-center justify-center">
+        <main class="shadow-xl bg-gray-100 shadow-gray-300 w-10/12 md:w-1/2 p-8">
+            <h1 class="text-3xl font-bold mb-4 text-center">BrainFuck Graphical Interpreter 🤯</h1>
+            <div class="space-y-3">
+                <div class="flex flex-col">
+                    <label class="block mb-1 font-semibold">Input</label>
+                    <textarea placeholder="<+.->" class="border border-gray-400 rounded" name="input" id="input"></textarea>
+                    <div id="display" class="font-mono hidden">lksfnsfinaldkfsnfajfkjf</div>
+                </div>
+                <div class="flex flex-wrap">
+                    <label class="mr-5 font-semibold">Delay in ms</label>
+                    <div>
+                        <input type="number" placeholder="500" class="border border-gray-400 rounded w-full text-center" name="delay" id="delay" value="500">
+                    </div>
+                </div>
+                <button onclick="compileInput(document.getElementById('input').value)" class="block w-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300 p-2 rounded text-gray-100 font-bold">Start Procces</button>
+            </div>
+        </main>
+        <script src="./public/main.js"></script>
+        <script>
+            function compileInput(input) {
+                console.log(input);
+                alert('Sorry, Web in Construction');
+            }
+        </script>
+    </body>
 </html>
